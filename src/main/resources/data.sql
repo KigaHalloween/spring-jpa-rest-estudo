@@ -1,7 +1,7 @@
 CREATE TABLE CLIENTE(
     idCliente INTEGER PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR (50),
-    Telefone INT,
+    Telefone INTEGER,
     Email VARCHAR (50)
 );
 
