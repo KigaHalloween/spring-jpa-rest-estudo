@@ -23,6 +23,7 @@ public class Cliente {
     }
 
     public Cliente(){}
+
      public Cliente(String nome,  String email, Integer telefone) {
         this.nome = nome;
         this.telefone = telefone;
