@@ -1,8 +1,8 @@
 CREATE TABLE CLIENTE(
     idCliente INTEGER PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR (50),
-    Telefone INTEGER,
-    Email VARCHAR (50)
+    Email VARCHAR (50),
+    Telefone INTEGER
 );
 
 CREATE TABLE CARRO(

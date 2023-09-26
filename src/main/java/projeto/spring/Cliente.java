@@ -1,13 +1,24 @@
 package projeto.spring;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CLIENTE")
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "Nome", length = 50)
     private String nome;
+    @Column(name="Email", length = 50)
     private String email;
+    @Column(name = "Telefone")
     private Integer telefone;
 
-    public Integer getTelefone() {
+     public Integer getTelefone() {
         return telefone;
     }
 
