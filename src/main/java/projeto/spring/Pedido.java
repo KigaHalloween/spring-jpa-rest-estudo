@@ -1,50 +1,66 @@
 package projeto.spring;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name="Pedido")
 public class Pedido {
 
-    private Integer id_Pedido;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Cliente id;
-    private Carro id_Carro;
-    private Grupo_carro id_Grupo;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
+   // @Column(name = "carro")
+   // private Carro carro;
+    @ManyToOne
+    @JoinColumn(name="grupo_id")
+    private Grupo_carro grupo_carro;
+    @Column(name="Data_Aluguel")
     private LocalDate data_Aluguel;
+    @Column(name="Data_Devolucao")
     private LocalDate data_Devolucao;
+    @Column(name="Valor_diaria")
     private BigDecimal valor_Diaria;
+    @Column(name="Diaria ")
     private Byte validade;
 
 
-    public Integer getId_Pedido() {
-        return id_Pedido;
+    public Cliente getId_Pedido() {
+        return id;
     }
 
     public void setId_Pedido(Integer id_Pedido) {
         this.id = id;
     }
 
-    public Cliente getId() {
-        return id;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setId(Cliente id) {
-        this.id = id;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Carro getId_Carro() {
-        return id_Carro;
+   /** public Carro getCarro() {
+        return carro;
     }
 
-    public void setId_Carro(Carro id_Carro) {
-        this.id_Carro = id_Carro;
+    public void setCarro(Carro carro) {
+        this.carro = carro;
     }
+**/
+    public Grupo_carro getGrupo() {return grupo_carro;}
 
-    public Grupo_carro getId_Grupo() {
-        return id_Grupo;
-    }
-
-    public void setId_Grupo(Grupo_carro id_Grupo) {
-        this.id_Grupo = id_Grupo;
+    public void setGrupo(Grupo_carro grupo_carro) {
+        this.grupo_carro = grupo_carro;
     }
 
     public LocalDate getData_Aluguel() {
@@ -77,5 +93,14 @@ public class Pedido {
 
     public void setValidade(Byte validade) {
         this.validade = validade;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "cliente=" + cliente +
+                ", data_Aluguel=" + data_Aluguel +
+                ", data_Devolucao=" + data_Devolucao +
+                '}';
     }
 }

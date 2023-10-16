@@ -3,6 +3,7 @@ package projeto.spring;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Set;
 
 @Entity
 @Table(name = "CLIENTE")
@@ -17,6 +18,8 @@ public class Cliente {
     private String email;
     @Column(name = "Telefone")
     private Integer telefone;
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
+    private Set<Pedido> pedidos;
 
      public Integer getTelefone() {
         return telefone;
@@ -77,4 +80,12 @@ public class Cliente {
                 '}';
     }
 
+    public Set<Pedido> getPedidos() {
+         return pedidos;
+     }
+
+
+    public void setPedidos(Set<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
 }

@@ -1,12 +1,24 @@
 package projeto.spring;
 
+import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 
+@Entity
+@Table(name = "Carro")
 public class Carro {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private Integer id;
+
+    @Column(name="placa")
     private String placa;
+
+    @Column(name="marca")
     private String marca;
+
+    @Column(name="modelo")
     private String modelo;
 
     public Integer getId() {
