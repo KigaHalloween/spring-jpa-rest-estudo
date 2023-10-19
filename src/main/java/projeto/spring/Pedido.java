@@ -8,11 +8,10 @@ import java.time.LocalDate;
 @Table(name="Pedido")
 public class Pedido {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
-    private Cliente id;
+    private Integer id_pedido;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
@@ -33,12 +32,12 @@ public class Pedido {
     private Byte validade;
 
 
-    public Cliente getId_Pedido() {
-        return id;
+    public Integer getId_Pedido() {
+        return id_pedido;
     }
 
     public void setId_Pedido(Integer id_Pedido) {
-        this.id = id;
+        this.id_pedido = id_Pedido;
     }
 
     public Cliente getCliente() {

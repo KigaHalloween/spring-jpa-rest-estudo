@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "CLIENTE")
+@Table(name = "Cliente")
 public class Cliente {
 
     @Id
@@ -21,7 +21,8 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
     private Set<Pedido> pedidos;
 
-     public Integer getTelefone() {
+
+  /**   public Integer getTelefone() {
         return telefone;
     }
 
@@ -35,6 +36,7 @@ public class Cliente {
         this.email = email;
         this.telefone = telefone;
     }
+    **/
 
     public Cliente(){}
 

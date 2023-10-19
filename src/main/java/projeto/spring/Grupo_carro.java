@@ -12,7 +12,7 @@ public class Grupo_carro {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private Integer id;
-    @Column(name = "id_carro")
-    private Carro id_Carro;
+   // @Column(name = "id_carro")
+  //  private Carro id_Carro;
 
 }
