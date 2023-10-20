@@ -57,9 +57,9 @@ public class vendasApplication {
                 System.out.println("Bucando clientes");
                 clientes.findByNomeLike("kiga").forEach(System.out::println);
 
-               clientes.findAll().forEach( c ->{
-                  clientes.delete(c);
-                });
+              // clientes.findAll().forEach( c ->{
+                //  clientes.delete(c);
+                //});
 
 
             todosClientes = clientes.findAll();
